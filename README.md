@@ -82,7 +82,35 @@ First I wanted to understand the distribution of recipes and interactions over t
 
 In this histograms we see how both recipes and interactions decrease over time, which means that most of the data comes from the early yers of the website while very few data come from the last years. This could be a consequence of a decrease on the active users of the website over the years, since less users would make fewer publications and fewer interactions.
 
+Then I was curious to see how did the distribution of ratings look, this would help us understand what a low rating would be compared to all the ratings in general.
 
+<iframe src="assets/ratingsdist.html" width=800 height=600 frameBorder=0></iframe> 
+
+Now with this histogram we can understand more what does each rating mean, for example getting a 3 star rating migh not seem so bad, after seeing this histogram you can see that 3 star ratings are part of the lowest 7 percent of ratings, which makes a 3 star rating a low value more than a mid range value.
+
+### Bivariate Analysis	
+
+Now it is time to do a more interesting analysis that compares vegan recipes with other variables of the data.
+
+The first think I though about checking was how do the number of vegan recipies changes as years go by, but as we saw in the Univariate Analysis the number of recipies decreases over the years regardless of the recipes being vegan or not vegan. Therefore if I wnated to find a significant increase in the popularity of vegan recipes I needed to compare the proportion of vegan recipies each year.
+
+<iframe src="assets/proportion_of_vegan_years.html" width=800 height=600 frameBorder=0></iframe> 
+
+Here we see and initial increase in the proportion of vegan recipes each year. Which could support the argument that vegan recipes had an increase in popularity on that period of time. But then we se a rapid decrease in this proportions, this could be to the deacrese of active users on the website as I mentioned in my univarite analysis.
+
+Since I want to understand if vegan recipes are rated different to normal recipes, the next thing I checked  was the distribution of ratings for Vegan recipes only.
+
+<iframe src="assets/vegan_ratings.html" width=800 height=600 frameBorder=0></iframe> 
+
+Here we see that the ratings of vegan recipes are very similar to the ratings of all recipes over all. Both distribution have a higher concentration in high ratings, but if we look carefully it seems as if the vegan recipes have more concentration on the high end of the ratings than the overall distribution of ratings.
+
+### Interesting Aggregates	
+
+In this section I want to show some interesting tables I formulated that bring information about the nutritional value of vegan recipes.
+
+| vegan/rating | 0 | 1 | 2 | 3 | 4 | 5 |						
+| False | 49.703116 | 48.088483 | 44.777281 | 41.679254 | 38.057655 | 40.767469 |
+| True | 10.479514 | 18.125926 | 10.780303 | 10.500000 | 8.912019 | 10.033976 |
 
 
 
