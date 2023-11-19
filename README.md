@@ -17,11 +17,12 @@ Since my focus on this project isto determine how much do we like vegan recipes 
 
 ## Cleaning and EDA
 
+### Data Cleaning	
+
 The first thing I did to start my clening proces was to check the tyoes of the two data frames I had and look for a more convienient Type for each column.
 
 **types for the recipes columns**
 ```
-
 name              object
 id                 int64
 minutes            int64
@@ -34,5 +35,34 @@ steps             object
 description       object
 ingredients       object
 n_ingredients      int64
-
 ```
+
+**types for the interaction columns**
+```
+user_id       int64
+recipe_id     int64
+date         object
+rating        int64
+review       object
+```
+
+#### Converting dates to date time tyoe.
+The first thing I noticed and cleaned was the date columns, I noticed this columns where in the type of Object which is the type dessignated to strings in pandas. I changed this type to date time because date time is more convinient to do operations and to get informations from it.
+
+#### Strings to lists.
+Additionally, there are multiple columns in the recipes data frame which have data type of string but this are lists in the format of strings. Therefore i wrote a function that helped me tranfomed from a string to a list and I applied this function to the nescessary columns.
+
+#### Nutrition column.
+The nutrition column was one of the previous columns that had a string of a lists, but once I tranformed the strings into lists, I noticed that it was more convinient to transforme this list into different columns for each element.
+
+#### Merged Data frame.
+My last cleaning step was to form a new dataframe the merged the interactions and the recipes dataframes, for this I did an inner merging process, because it didn't make sense to keep values of either column if they didn't had a recipe from recipe or a interaction related to that recipe.
+
+#### Look of the Data Frame
+
+
+| user_id | recipe_id |	date | rating | Year_x | submitted | tags | calories |
+|---------|-----------|------|--------|--------|-----------|------|----------|
+| 483827 | 306785 | 2008-07-15 | 5 | 2008 | 2008-06-02 | [60-minutes-or-less, time-to-make,course, mai...| 95.3 |
+
+
