@@ -109,7 +109,9 @@ Here we see that the ratings of vegan recipes are very similar to the ratings of
 In this section I want to show some interesting tables I formulated that bring information about the nutritional value of vegan recipes.
 
 | vegan/rating | 0 | 1 | 2 | 3 | 4 | 5 |
+|--------------|---|---|---|---|---|---|
 | False | 49.703116 | 48.088483 | 44.777281 | 41.679254 | 38.057655 | 40.767469 |
+|-------|-----------|-----------|-----------|-----------|-----------|-----------|
 | True | 10.479514 | 18.125926 | 10.780303 | 10.500000 | 8.912019 | 10.033976 |
 
 
