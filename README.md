@@ -20,7 +20,8 @@ Since my focus on this project isto determine how much do we like vegan recipes 
 The first thing I did to start my clening proces was to check the tyoes of the two data frames I had and look for a more convienient Type for each column.
 
 **types for the recipes columns**
-'''
+```
+{
 name              object
 id                 int64
 minutes            int64
@@ -33,5 +34,5 @@ steps             object
 description       object
 ingredients       object
 n_ingredients      int64
-dtype: object
-'''
+}
+```
