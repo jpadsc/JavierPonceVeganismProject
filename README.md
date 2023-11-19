@@ -58,11 +58,31 @@ The nutrition column was one of the previous columns that had a string of a list
 #### Merged Data frame.
 My last cleaning step was to form a new dataframe the merged the interactions and the recipes dataframes, for this I did an inner merging process, because it didn't make sense to keep values of either column if they didn't had a recipe from recipe or a interaction related to that recipe.
 
-#### Look of the Data Frame
+#### A look to the Data Frame
 
 
 | user_id | recipe_id |	date | rating | Year_x | submitted | tags | calories |
 |---------|-----------|------|--------|--------|-----------|------|----------|
 | 483827 | 306785 | 2008-07-15 | 5 | 2008 | 2008-06-02 | [60-minutes-or-less, time-to-make,course, mai...| 95.3 |
+
+This is how the first row of the most important columns look like
+
+#### Finding how to determine if a recipe is vegan.
+When I first though of my question I didn't know if there was going to be a way to tell appart vegan recipes from not vegan recipes. My initial though was that I could look through all the ingridients and classify  which ingrdients made a recipe not vegan and then classify each recipe with their respective ingrdients. I immediatly realized that this was not going to be possible since the number of ingridients is huge and to classify the ingridients I would have to do it manually. Instead then, I though about looking in the tags, and that maybe there was a vegan tag I could use to my advantage. Fortunately for my I found a tag named vegan and with this I was able to created a new column which had True if a recipe was vegan and False otherwise.
+
+### Univariate Analysis	
+
+Now, after doing all the mentioned modification to my Data frame we are able to do some Analysis.
+
+First I wanted to understand the distribution of recipes and interactions over the years, To build a better understanding of the data set overall.
+
+<iframe src="assets/recipesdist.html" width=800 height=600 frameBorder=0></iframe> 
+
+<iframe src="assets/interactions_years.html" width=800 height=600 frameBorder=0></iframe>
+
+In this histograms we see how both recipes and interactions decrease over time, which means that most of the data comes from the early yers of the website while very few data come from the last years. This could be a consequence of a decrease on the active users of the website over the years, since less users would make fewer publications and fewer interactions.
+
+
+
 
 
