@@ -113,5 +113,63 @@ In this section I want to show some interesting tables I formulated that bring i
 | False | 49.703116 | 48.088483 | 44.777281 | 41.679254 | 38.057655 | 40.767469 |
 | True | 10.479514 | 18.125926 | 10.780303 | 10.500000 | 8.912019 | 10.033976 |
 
+**The table above represents the average saturated fats from vegan and non vegan recipes at each of the specified ratings**
+
+| vegan/rating | 0 | 1 | 2 | 3 | 4 | 5 |
+|--------------|---|---|---|---|---|---|
+| False | 492.085406 | 495.705484 | 457.860599 | 435.136629 | 413.99717 | 423.388873 |
+| True | 309.517602 | 302.031852 | 255.820455 | 251.997541 | 253.47250 | 260.301493 |
+
+**The table above represents the average calories from vegan and non vegan recipes at each of the specified ratings**
+
+
+Looking at this differnt tables you can understand a little bit more about how different is the nutrition of vegan recipes compared to regular recipes and how the nutriciuos facts reflect in the rating. The first thing I noticed in this tables, is that compared to non-vegan recipes, vegan recipes tend to have lower values in all categories on average than non-vegan recipes, this could be the reason why vegan foods are normally consider healthy since the excess of most of this nutrition categories is bad for your haelth,and having lower values on everything helps moderation. Additionaly, these tables help to see how rating chnages with the nutrition, we see in most of the tables that the lowest rating is assign to the highest values which means that normally users don't like food that have excess of calories, fats, sugar, etc. In addition, we see that in most of the tables the highest ranking comes with a mid range values showing that we don;t like the excess but also we don't particularly like when a food has very low calories, sugars,etc.
+
+## Assessment of Missingness
+
+### NMAR Analysis
+
+After looking at my columns with missing values above, I believe that the missingness of description is NMAR, this is because this would be a person who writes a recipe and thinks that the description would be too simple and therefore they don't include one. For example if I am doing a ham and cheese sandwich my description would be too simple and obvious that I might not include it on the page. Therefore since the missing description depends on the description being simple this is NMAR.
+
+### Missingness Dependency	
+
+After looking at the missingness of 'reviews',  I realized that the year of the interactions(Year_x) are in the higher end of years, which is very odd since most of the data on both recipes and interactions came from the earlier years, then looking at the years of the recipes (Year_y) I noticed that this were on the earlier years just like expected, which makes me think that the missingness of review might be **MAR** dependent on the year of the review.
+
+<iframe src="assets/missing_reviews1.html" width=800 height=600 frameBorder=0></iframe> 
+
+Here we can clearly see how most of the missing reviews come from the last three years which as I said is very odd because we have more data from the early 2000's. So let's ran a simulation to see if this is MAR. Our null will be that the years of the missing reviews were selected randomly from the distribution. our alternative would be that this years where not seledcted at random and therefore the missing reviews depend on the Year_x column.
+
+To check this i generated a data set of expected TVD's if the years were randomly selected from the years of the ratings availible.
+
+<iframe src="assets/MARtest.html" width=800 height=600 frameBorder=0></iframe> 
+
+Here we can see how far away is out observed TVD compared to the expected TVD'S from the simulation. This helps us reject the null suggesting that the missing reviews are dependednt on the year of the interaction **note the probabilities I used for our null where the proportions from the histogram of the distribution of interactions over the years**
+
+Now if we look at the distribution of the missing reviews over the year of the submission we will see that this distribution is extremely similar to the distribution of recipes over the years, showing that it is not dependent on this column.
+
+<iframe src="assets/missing_reviews2.html" width=800 height=600 frameBorder=0></iframe> 
+
+## Hypothesis Testing
+ After cleaning and analizing the data, I am goint to do a hypothesis test to answer the question, **Do vegan recipes get better ratings than regular recipes?**
+
+ To answer my question my null Hypothesis is going to be
+
+**Null hypothesis: Vegan recipes get the same ratings than non-vegan recipes**
+
+and my alternative hypothesis will be
+
+**Alternative hypothesis: Vegan recipes get better ratings than non-vegan recipes**
+
+To solve this question my test statistic is going to be the average rating for vegan recipes minus the average rating of non-vegan recipes
+
+After doing a simulation here you can see the observed test statistic compared to the simulated test statistics.
+
+<iframe src="assets/hypothesis_test.html" width=800 height=600 frameBorder=0></iframe> 
+
+Here we see that our observed test statistic is in the higher end of the yielding a p value of 0.007, which is enough to reject the null. As in all hypothesis testing this does not mean that we accept the alternative, we can never be sure of any of the hypothesis, but with this experiment we can conclude that the data does reflect a slighty better perfomance of vegan recipes in the Food.com website.
+
+
+
+
 
 
